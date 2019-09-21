@@ -56,9 +56,23 @@ body {
 .ufo-form {
   margin-top: 50px;
 }
+#table-area th {
+  text-align: center;
+  font-size: 1.3em;
+}
+.btn:hover {
+  color: yellow;
+  text-decoration: none;
+}
 
 .filters .panel-body {
   padding: 0;
+}
+.btn {
+  border-radius: 1.078em;
+  color: white;
+  font-size: 1em;
+  text-align:center;
 }
 
 .filters {
