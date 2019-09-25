@@ -42,6 +42,9 @@ body {
   padding: 5px;
   margin: 0;
 }
+.navbar-brand {
+font-size: 2.5em;
+}
 
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
@@ -112,7 +115,7 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("../images/ufo_img.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
@@ -122,6 +125,7 @@ select {
   margin-top: 200px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
+  color:whitesmoke;
 }
 
 .hero p {
@@ -202,8 +206,13 @@ select {
 
   .hero h1 {
     animation: smaller-title 1.2s forwards linear;
+    color: whitesmoke;
   }
 }
+.hero p {
+  color: whitesmoke;
+}
+
 
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
