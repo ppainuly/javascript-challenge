@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UFO Sightings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>UFO Signtings</h1>
+        <p>There have been 60k UFO sightings recorded in the United States. Click below to see every single sighting.</p>
+        <button id="filter-btn" type="button" class="btn btn-default">Click to View Data</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Last UFO Sighting </h3>
+                <div id="info"></div>
+                <div id="plot"></div>
+                <p id="myDIV"></p>
+            </div>
+        </div>
+          
+    </div>
+    <script>
+        function buildPlot() {
+        /* data route */
+            console.log("Running buildplot....")
+            let url = '/api/days';
+
+            d3.json(url).then(function(response) {
+    
+            console.log(response);
+            let data = [response]   
+            //console.log(response["lat"]);
+
+            //Calculate date diff
+            // var dateSighting = new Date();
+            // var today = new Date()
+            // console.log(Math.ceil((today-dateSighting)/(1000*60*60*24)));
+            
+
+            //document.getElementById('plot').innerHTML = data   
+
+            var layout = {
+                autosize: true,
+                hovermode:'closest',
+                mapbox: {
+                    bearing:0,
+                    center: {
+                    lat:35.65,
+                    lon:-97.47
+                    },
+                    pitch:0,
+                    zoom:8
+                },
+                }
+
+                Plotly.setPlotConfig({
+                mapboxAccessToken: 'pk.eyJ1IjoiZXRwaW5hcmQiLCJhIjoiY2luMHIzdHE0MGFxNXVubTRxczZ2YmUxaCJ9.hwWZful0U2CQxit4ItNsiQ'
+                })
+
+                //Plotly.plot('plot', data, layout, {showSendToCloud: true})
+
+            });
+            };
+            console.log("Starting JS...")
+            buildPlot();
+        </script>
+</body>
+</html>
