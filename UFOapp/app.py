@@ -21,7 +21,6 @@ db = client.ufo
 app = Flask(__name__)
 
 
-
 @app.before_first_request
 def setup():
 # Recreate collection each time for demo
