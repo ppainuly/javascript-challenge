@@ -72,6 +72,12 @@ def days():
     #TO return the entire object dict
     #return dumps(db.ufo_data.find().sort("datetime",pymongo.DESCENDING).limit(1))
 
+@app.route("/api/all")
+def all():
+    print(dumps(db.ufo_data.find().sort("datetime",pymongo.DESCENDING).limit(1)))
+    return (dumps(db.ufo_data.find().sort("datetime",pymongo.DESCENDING).limit(1)))
+    #return jsonify({"A":"B"})
+
 
 if __name__ == "__main__":
     app.run()
